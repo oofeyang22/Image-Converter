@@ -1,0 +1,83 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    background: blue;
+    width: 350px;
+    padding: 1rem;
+    border-radius: 4%;
+}
+
+.paste-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.paste{
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 0.4rem;
+    text-transform: capitalize;
+}
+#url{
+    height: 25px;
+    width: 20rem;
+   
+}
+#url::placeholder{
+    text-align: center;
+}
+button{
+    height: 25px;
+    background: wheat;
+    border: none;
+    font-weight: 500;
+    text-align: center;
+}
+button:hover{
+    cursor:pointer;
+}
+.heart{
+    height: 100px;
+    width: 90px;
+    position: relative;
+    animation: beat 2s ease-in-out infinite;
+}
+.heart::before, .heart::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    background: red;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 50px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+}
+.heart::after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+@keyframes beat{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@media screen and (max-width: 480px){
+    .wrapper{
+        width: 300px;
+    }
+}
